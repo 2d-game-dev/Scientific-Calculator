@@ -1,0 +1,100 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  background-color: cornflowerblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.calculator {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+
+  width: min(90vw, 460px);
+  padding: 20px;
+  background-color: #05017d;
+  border-radius: 12px;
+}
+
+.screen {
+  grid-column: 1 / -1;   /* spans all columns */
+
+  height: 80px;
+  padding: 12px;
+
+  background-color: #000000;
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  font-size: 2rem;
+  border-radius: 8px;
+
+  overflow:hidden;/*prevents spilling outside*/
+  white-space: nowrap;/*keeps it on one line*/
+  text-overflow: ellipsis;/*shows ... if too long*/
+}
+
+button {
+  height: 60px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: rgb(39, 51, 212);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+
+
+@media (max-width: 600px) {
+
+  body {
+    padding: 10px;
+    height: auto;
+  }
+
+  .calculator {
+    width: 100%;
+    max-width: 100%;
+    padding: 12px;
+    gap: 8px;
+  }
+
+  .screen {
+    height: 65px;
+    font-size: 1.4rem;
+    padding: 10px;
+  }
+
+  button {
+    height: 50px;
+    font-size: 1rem;
+  }
+}
+
+/* Extra small phones */
+@media (max-width: 400px) {
+
+  .screen {
+    height: 60px;
+    font-size: 1.2rem;
+  }
+
+  button {
+    height: 45px;
+    font-size: 0.9rem;
+  }
+
+}
